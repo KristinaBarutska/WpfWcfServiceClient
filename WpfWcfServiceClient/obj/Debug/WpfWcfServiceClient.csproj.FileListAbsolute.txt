@@ -1,0 +1,14 @@
+c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\bin\Debug\WpfWcfServiceClient.exe.config
+c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\bin\Debug\WpfWcfServiceClient.exe
+c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\bin\Debug\WpfWcfServiceClient.pdb
+c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\obj\Debug\WpfWcfServiceClient.csprojResolveAssemblyReference.cache
+c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\obj\Debug\MainWindow.g.cs
+c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\obj\Debug\App.g.cs
+c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\obj\Debug\WpfWcfServiceClient_MarkupCompile.cache
+c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\obj\Debug\WpfWcfServiceClient_MarkupCompile.lref
+c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\obj\Debug\MainWindow.baml
+c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\obj\Debug\WpfWcfServiceClient.g.resources
+c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\obj\Debug\WpfWcfServiceClient.Properties.Resources.resources
+c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\obj\Debug\WpfWcfServiceClient.csproj.GenerateResource.Cache
+c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\obj\Debug\WpfWcfServiceClient.exe
+c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\obj\Debug\WpfWcfServiceClient.pdb
