@@ -28,7 +28,11 @@ namespace WpfWcfServiceClient
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SimpleService.SimpleServiceClient client = new SimpleService.SimpleServiceClient();
-            MessageBox.Show(client.GetUserName());
+            //MessageBox.Show(client.GetUserName());
+            var result = client.GetWindowsUserName();
+            string name = result.Result;
+            //MessageBox.Show(name);
+            LoginLabel.Content = name + ", you are logged in!";
         }
     }
 }

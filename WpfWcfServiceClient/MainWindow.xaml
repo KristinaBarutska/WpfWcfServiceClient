@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button Content="Windows Login" HorizontalAlignment="Left" Margin="166,223,0,0" VerticalAlignment="Top" Width="144" Height="45" AutomationProperties.Name="WindowsLoginButton" Click="Button_Click"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="166,110,0,0" VerticalAlignment="Top" Height="40" Width="206"/>
+        <Button Content="Windows Login" HorizontalAlignment="Left" Margin="23,242,0,0" VerticalAlignment="Top" Width="144" Height="45" AutomationProperties.Name="WindowsLoginButton" Click="Button_Click"/>
+        <Label x:Name="LoginLabel" Content="LoginLabel" HorizontalAlignment="Left" Margin="23,31,0,0" VerticalAlignment="Top" Height="40" Width="388"/>
 
     </Grid>
 </Window>

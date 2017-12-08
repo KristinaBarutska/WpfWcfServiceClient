@@ -9,7 +9,86 @@
 //------------------------------------------------------------------------------
 
 namespace WpfWcfServiceClient.SimpleService {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BusinessResult", Namespace="http://schemas.datacontract.org/2004/07/Models")]
+    [System.SerializableAttribute()]
+    public partial class BusinessResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsOKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] MessagesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ResultField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsOK {
+            get {
+                return this.IsOKField;
+            }
+            set {
+                if ((this.IsOKField.Equals(value) != true)) {
+                    this.IsOKField = value;
+                    this.RaisePropertyChanged("IsOK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] Messages {
+            get {
+                return this.MessagesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessagesField, value) != true)) {
+                    this.MessagesField = value;
+                    this.RaisePropertyChanged("Messages");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Result {
+            get {
+                return this.ResultField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ResultField, value) != true)) {
+                    this.ResultField = value;
+                    this.RaisePropertyChanged("Result");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SimpleService.ISimpleService")]
@@ -20,6 +99,12 @@ namespace WpfWcfServiceClient.SimpleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISimpleService/GetUserName", ReplyAction="http://tempuri.org/ISimpleService/GetUserNameResponse")]
         System.Threading.Tasks.Task<string> GetUserNameAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISimpleService/GetWindowsUserName", ReplyAction="http://tempuri.org/ISimpleService/GetWindowsUserNameResponse")]
+        WpfWcfServiceClient.SimpleService.BusinessResult GetWindowsUserName();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISimpleService/GetWindowsUserName", ReplyAction="http://tempuri.org/ISimpleService/GetWindowsUserNameResponse")]
+        System.Threading.Tasks.Task<WpfWcfServiceClient.SimpleService.BusinessResult> GetWindowsUserNameAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +140,14 @@ namespace WpfWcfServiceClient.SimpleService {
         
         public System.Threading.Tasks.Task<string> GetUserNameAsync() {
             return base.Channel.GetUserNameAsync();
+        }
+        
+        public WpfWcfServiceClient.SimpleService.BusinessResult GetWindowsUserName() {
+            return base.Channel.GetWindowsUserName();
+        }
+        
+        public System.Threading.Tasks.Task<WpfWcfServiceClient.SimpleService.BusinessResult> GetWindowsUserNameAsync() {
+            return base.Channel.GetWindowsUserNameAsync();
         }
     }
 }

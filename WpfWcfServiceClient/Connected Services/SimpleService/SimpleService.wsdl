@@ -134,10 +134,50 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ISimpleService_GetWindowsUserName_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ISimpleService_GetWindowsUserName_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8090/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8090/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8090/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Models" />
+      <xsd:import schemaLocation="http://localhost:8090/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ISimpleService_GetUserName_InputMessage">
@@ -146,10 +186,20 @@
   <wsdl:message name="ISimpleService_GetUserName_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUserNameResponse" />
   </wsdl:message>
+  <wsdl:message name="ISimpleService_GetWindowsUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWindowsUserName" />
+  </wsdl:message>
+  <wsdl:message name="ISimpleService_GetWindowsUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWindowsUserNameResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISimpleService">
     <wsdl:operation name="GetUserName">
       <wsdl:input wsaw:Action="http://tempuri.org/ISimpleService/GetUserName" message="tns:ISimpleService_GetUserName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISimpleService/GetUserNameResponse" message="tns:ISimpleService_GetUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISimpleService/GetWindowsUserName" message="tns:ISimpleService_GetWindowsUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISimpleService/GetWindowsUserNameResponse" message="tns:ISimpleService_GetWindowsUserName_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_ISimpleService" type="tns:ISimpleService">
@@ -163,6 +213,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_ISimpleService_GetUserName_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsUserName">
+      <soap12:operation soapAction="http://tempuri.org/ISimpleService/GetWindowsUserName" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ISimpleService_GetWindowsUserName_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ISimpleService_GetWindowsUserName_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
