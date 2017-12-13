@@ -13,10 +13,10 @@
     </UserControl.InputBindings>
 
     <StackPanel Height="336">
-        <Label Foreground="Blue" Margin="5,5,5,0">Text To Convert</Label>
+        <Label Foreground="Blue" Margin="5,5,5,0">Type your message:</Label>
         <TextBox Text="{Binding SomeText, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
-        <Label Foreground="Blue" Margin="5,5,5,0">History</Label>
+        <Label Foreground="Blue" Margin="5,5,5,0">Chat</Label>
         <ListBox ItemsSource="{Binding History}" Height="200" Margin="5"/>
-        <Button Command="{Binding ConvertTextCommand}" Margin="5">Convert</Button>
+        <Button Command="{Binding ConvertTextCommand}" Margin="5">Send</Button>
     </StackPanel>
 </UserControl>

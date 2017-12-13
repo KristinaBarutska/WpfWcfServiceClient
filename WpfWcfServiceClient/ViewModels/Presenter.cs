@@ -7,9 +7,16 @@ namespace WpfWcfServiceClient.ViewModels
 {
     public class Presenter : ObservableObject
     {
-        private readonly TextConverter _textConverter = new TextConverter(s => s.ToUpper());
+        private readonly TextConverter _textConverter = new TextConverter(s => Presenter.GetUserName()+ ": " + s);
         private string _someText;
         private readonly ObservableCollection<string> _history = new ObservableCollection<string>();
+
+        public static string GetUserName()
+        {
+            SimpleService.SimpleServiceClient client = new SimpleService.SimpleServiceClient();
+            var user = (client.GetUserName());
+            return user;
+        }
 
         public string SomeText
         {
