@@ -96,7 +96,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ISimpleService_GetUserName_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISimpleService_CheckUserName_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -115,7 +115,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ISimpleService_GetUserName_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISimpleService_CheckUserName_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -134,7 +134,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ISimpleService_GetWindowsUserName_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISimpleService_GetMessage_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -153,7 +153,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_ISimpleService_GetWindowsUserName_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISimpleService_GetMessage_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -180,50 +180,50 @@
       <xsd:import schemaLocation="http://localhost:8090/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="ISimpleService_GetUserName_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserName" />
+  <wsdl:message name="ISimpleService_CheckUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserName" />
   </wsdl:message>
-  <wsdl:message name="ISimpleService_GetUserName_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserNameResponse" />
+  <wsdl:message name="ISimpleService_CheckUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserNameResponse" />
   </wsdl:message>
-  <wsdl:message name="ISimpleService_GetWindowsUserName_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetWindowsUserName" />
+  <wsdl:message name="ISimpleService_GetMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessage" />
   </wsdl:message>
-  <wsdl:message name="ISimpleService_GetWindowsUserName_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetWindowsUserNameResponse" />
+  <wsdl:message name="ISimpleService_GetMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageResponse" />
   </wsdl:message>
   <wsdl:portType name="ISimpleService">
-    <wsdl:operation name="GetUserName">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISimpleService/GetUserName" message="tns:ISimpleService_GetUserName_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISimpleService/GetUserNameResponse" message="tns:ISimpleService_GetUserName_OutputMessage" />
+    <wsdl:operation name="CheckUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISimpleService/CheckUserName" message="tns:ISimpleService_CheckUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISimpleService/CheckUserNameResponse" message="tns:ISimpleService_CheckUserName_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetWindowsUserName">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISimpleService/GetWindowsUserName" message="tns:ISimpleService_GetWindowsUserName_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISimpleService/GetWindowsUserNameResponse" message="tns:ISimpleService_GetWindowsUserName_OutputMessage" />
+    <wsdl:operation name="GetMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISimpleService/GetMessage" message="tns:ISimpleService_GetMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISimpleService/GetMessageResponse" message="tns:ISimpleService_GetMessage_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_ISimpleService" type="tns:ISimpleService">
     <wsp:PolicyReference URI="#WSHttpBinding_ISimpleService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetUserName">
-      <soap12:operation soapAction="http://tempuri.org/ISimpleService/GetUserName" style="document" />
+    <wsdl:operation name="CheckUserName">
+      <soap12:operation soapAction="http://tempuri.org/ISimpleService/CheckUserName" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ISimpleService_GetUserName_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ISimpleService_CheckUserName_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ISimpleService_GetUserName_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ISimpleService_CheckUserName_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetWindowsUserName">
-      <soap12:operation soapAction="http://tempuri.org/ISimpleService/GetWindowsUserName" style="document" />
+    <wsdl:operation name="GetMessage">
+      <soap12:operation soapAction="http://tempuri.org/ISimpleService/GetMessage" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_ISimpleService_GetWindowsUserName_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ISimpleService_GetMessage_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_ISimpleService_GetWindowsUserName_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_ISimpleService_GetMessage_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

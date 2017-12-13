@@ -7,15 +7,15 @@ namespace WpfWcfServiceClient.ViewModels
 {
     public class Presenter : ObservableObject
     {
-        private readonly TextConverter _textConverter = new TextConverter(s => Presenter.GetUserName()+ ": " + s);
+        //private readonly TextConverter _textConverter = new TextConverter(s => Presenter.GetUserName()+ ": " + s);
         private string _someText;
         private readonly ObservableCollection<string> _history = new ObservableCollection<string>();
 
-        public static string GetUserName()
+        public static string GetMessages()
         {
             SimpleService.SimpleServiceClient client = new SimpleService.SimpleServiceClient();
-            var user = (client.GetUserName());
-            return user;
+            var message = (client.GetMessage());
+            return message.Result;
         }
 
         public string SomeText
@@ -33,15 +33,15 @@ namespace WpfWcfServiceClient.ViewModels
             get { return _history; }
         }
 
-        public ICommand ConvertTextCommand
+        public ICommand DisplayMessageCommand
         {
-            get { return new DelegateCommand(ConvertText); }
-        }
+            get { return new DelegateCommand(DisplayMessage); }
+        }       
 
-        private void ConvertText()
+        private void DisplayMessage()
         {
             if (string.IsNullOrWhiteSpace(SomeText)) return;
-            AddToHistory(_textConverter.ConvertText(SomeText));
+            AddToHistory(GetMessages()+ ": " +SomeText);
             SomeText = string.Empty;
         }
 

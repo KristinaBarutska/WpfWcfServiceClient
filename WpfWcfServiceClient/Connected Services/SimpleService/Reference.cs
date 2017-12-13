@@ -94,17 +94,17 @@ namespace WpfWcfServiceClient.SimpleService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SimpleService.ISimpleService")]
     public interface ISimpleService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISimpleService/GetUserName", ReplyAction="http://tempuri.org/ISimpleService/GetUserNameResponse")]
-        string GetUserName();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISimpleService/CheckUserName", ReplyAction="http://tempuri.org/ISimpleService/CheckUserNameResponse")]
+        WpfWcfServiceClient.SimpleService.BusinessResult CheckUserName();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISimpleService/GetUserName", ReplyAction="http://tempuri.org/ISimpleService/GetUserNameResponse")]
-        System.Threading.Tasks.Task<string> GetUserNameAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISimpleService/CheckUserName", ReplyAction="http://tempuri.org/ISimpleService/CheckUserNameResponse")]
+        System.Threading.Tasks.Task<WpfWcfServiceClient.SimpleService.BusinessResult> CheckUserNameAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISimpleService/GetWindowsUserName", ReplyAction="http://tempuri.org/ISimpleService/GetWindowsUserNameResponse")]
-        WpfWcfServiceClient.SimpleService.BusinessResult GetWindowsUserName();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISimpleService/GetMessage", ReplyAction="http://tempuri.org/ISimpleService/GetMessageResponse")]
+        WpfWcfServiceClient.SimpleService.BusinessResult GetMessage();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISimpleService/GetWindowsUserName", ReplyAction="http://tempuri.org/ISimpleService/GetWindowsUserNameResponse")]
-        System.Threading.Tasks.Task<WpfWcfServiceClient.SimpleService.BusinessResult> GetWindowsUserNameAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISimpleService/GetMessage", ReplyAction="http://tempuri.org/ISimpleService/GetMessageResponse")]
+        System.Threading.Tasks.Task<WpfWcfServiceClient.SimpleService.BusinessResult> GetMessageAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -134,20 +134,20 @@ namespace WpfWcfServiceClient.SimpleService {
                 base(binding, remoteAddress) {
         }
         
-        public string GetUserName() {
-            return base.Channel.GetUserName();
+        public WpfWcfServiceClient.SimpleService.BusinessResult CheckUserName() {
+            return base.Channel.CheckUserName();
         }
         
-        public System.Threading.Tasks.Task<string> GetUserNameAsync() {
-            return base.Channel.GetUserNameAsync();
+        public System.Threading.Tasks.Task<WpfWcfServiceClient.SimpleService.BusinessResult> CheckUserNameAsync() {
+            return base.Channel.CheckUserNameAsync();
         }
         
-        public WpfWcfServiceClient.SimpleService.BusinessResult GetWindowsUserName() {
-            return base.Channel.GetWindowsUserName();
+        public WpfWcfServiceClient.SimpleService.BusinessResult GetMessage() {
+            return base.Channel.GetMessage();
         }
         
-        public System.Threading.Tasks.Task<WpfWcfServiceClient.SimpleService.BusinessResult> GetWindowsUserNameAsync() {
-            return base.Channel.GetWindowsUserNameAsync();
+        public System.Threading.Tasks.Task<WpfWcfServiceClient.SimpleService.BusinessResult> GetMessageAsync() {
+            return base.Channel.GetMessageAsync();
         }
     }
 }
