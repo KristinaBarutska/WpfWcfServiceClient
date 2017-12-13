@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\obj\Debug\
+C:\Users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\obj\Debug\
 WpfWcfServiceClient
 none
 false
 DEBUG;TRACE
-c:\users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\App.xaml
-11151548125
+C:\Users\k.barutska\documents\visual studio 2017\Projects\WpfWcfServiceClient\WpfWcfServiceClient\App.xaml
+2-139281292
 
-6836540649
+11-1137605273
 151560689069
-MainWindow.xaml;
+Views\ConverterControl.xaml;Views\ConvertWindow.xaml;
 
 False
 
